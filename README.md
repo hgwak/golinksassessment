@@ -1,5 +1,5 @@
 
-# Submission Detials
+# Submission Details
 
 Please read the following details before you click 'Mark as Done' to your submission 
 1. Make sure that all your code is merged to the Main branch
