@@ -1,0 +1,43 @@
+<div class="student">
+  <div class="student-information-container">
+    <div class="profile-image">
+      <img [src]="student.pic" alt="" srcset="">
+    </div>
+    <div class="student-information">
+      <div class="name">
+        {{student.firstName}} {{student.lastName}}
+      </div>
+      <div class="student-additional-info">
+        <div class="email">
+          Email: {{student.email}}
+        </div>
+        <div class="company">
+          Company: {{student.company}}
+        </div>
+        <div class="skill">
+          Skill: {{student.skill}}
+        </div>
+        <div class="average">
+          Average: {{student.average}}%
+        </div>
+        <div class="test-information" *ngIf="showTestScores">
+          <div class="test-score" *ngFor="let score of student.grades; let i = index">
+            Test {{i + 1}}: {{score}}%
+          </div>
+        </div>
+        <div class="tag-list">
+          <div class="tag" *ngFor="let tag of student.tags">
+            {{tag}}
+          </div>
+        </div>
+        <div class="input-container">
+          <input type="text" placeholder="Add a tag" [(ngModel)]="addTag" (keyup.enter)="addStudentTag()">
+        </div>
+      </div>
+    </div>
+    <div class="icon" (click)="showTestScores = !showTestScores">
+      <svg *ngIf="!showTestScores" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M24 10h-10v-10h-4v10h-10v4h10v10h4v-10h10z"/></svg>
+      <svg *ngIf="showTestScores" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 10h24v4h-24z"/></svg>
+    </div>
+  </div>
+</div>
