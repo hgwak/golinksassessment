@@ -1,4 +1,4 @@
-import { StudentCardComponent } from './student-card/student-card.component';
+import { RepoCardComponent } from './repo-card/repo-card.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -7,14 +7,14 @@ import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
-    StudentCardComponent
+    RepoCardComponent
   ],
   imports: [
     CommonModule,
     FormsModule
   ],
   exports: [
-    StudentCardComponent
+    RepoCardComponent
   ]
 })
 export class AppCommonModule { }

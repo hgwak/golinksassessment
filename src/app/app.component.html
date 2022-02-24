@@ -1,13 +1,10 @@
-<div class="student-list-container">
+<div class="repo-list-container">
   <div class="input-container">
-    <input type="text" name="" id="filter" [(ngModel)]="filter" placeholder="Search by name" (keyup)="filterList()">
+    <input type="text" name="" id="filter" [(ngModel)]="filter" placeholder="Search by Organization" (keyup)="searchOrg()">
   </div>
-  <div class="input-container">
-    <input type="text" name="" id="tag" [(ngModel)]="tag" placeholder="Search by tag" (keyup)="filterTag()">
-  </div>
-  <div class="student-list">
-    <ng-container *ngFor="let student of studentList.students; trackBy: identify">
-      <app-student-card (addTagToList)="addTagToStudent($event, student)" *ngIf="checkFilters(student)" [student]="student"></app-student-card>
+  <div class="repo-list">
+    <ng-container *ngFor="let repo of repoList; trackBy: identify">
+      <app-repo-card [repo]="repo"></app-repo-card>
     </ng-container>
   </div>
 </div>

@@ -1,35 +1,21 @@
-.student {
+.repo {
   display: flex;
   border-bottom: 2px solid #F0F0F0;
   padding: 12px;
   position: relative;
 }
 
-.student-information-container {
+.repo-information-container {
   width: 100%;
   display: flex;
 }
 
-.profile-image {
-  height: 120px;
-  width: 120px;
-  border-radius: 50%;
-  border: 2px solid #F0F0F0;
-  margin: 20px;
-  overflow: hidden;
-}
-
-.profile-image img {
-  height: 100%;
-  width: 100%;
-}
-
-.student-additional-info {
+.repo-additional-info {
   padding-left: 20px;
   font-size: 18px;
 }
 
-.student-additional-info * {
+.repo-additional-info * {
   padding-bottom: 4px;
 }
 
@@ -87,4 +73,20 @@ input:focus {
   border-radius: 10px;
   margin-right: 4px;
   cursor: default;
+}
+
+.commit-list {
+  max-height: 240px;
+  overflow: auto;
+  box-shadow: inset -1px 0px 4px 0px #adadad;
+
+}
+
+.commit {
+  border-bottom: 2px solid #F0F0F0;
+  padding: 12px;
+}
+
+.commit:first-child {
+  border-top: 2px solid #F0F0F0;
 }

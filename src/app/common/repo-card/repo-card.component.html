@@ -1,0 +1,50 @@
+<div class="repo">
+  <div class="repo-information-container">
+    <div class="repo-information">
+      <div class="name">
+        {{repo.name}}
+      </div>
+      <div class="repo-additional-info">
+        <div class="language">
+          <b>Language:</b> {{repo.language}}
+        </div>
+        <div class="description">
+          <b>Description: </b>{{repo.description}}
+        </div>
+        <div class="stargazers-count">
+          <b>Star Count: </b>
+          {{repo.stargazers_count}}
+        </div>
+        <div class="fork-count">
+          <b>Fork Count: </b>{{repo.forks_count}}
+        </div>
+        <div class="date-created">
+          <b>Date Created: </b>{{repo.created_at | date}}
+        </div>
+        <div class="commits">
+          <b>Commits:</b>
+        </div>
+        <div class="commit-list" *ngIf="showCommits">
+          <div class="commit" *ngFor="let commit of commitList">
+            <div class="title">
+              <b>Message:</b> {{commit.commit.message}}
+            </div>
+            <div class="username">
+              <b>Name:</b> {{commit.author?.login || commit.commit.author.name}}
+            </div>
+            <div class="hash">
+              <b>Hash:</b> {{commit.sha}}
+            </div>
+            <div class="date-created">
+              <b>Date:</b> {{ commit.commit.author.date | date}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="icon" (click)="showCommits = !showCommits; getCommitList()">
+      <svg *ngIf="!showCommits" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M24 10h-10v-10h-4v10h-10v4h10v10h4v-10h10z"/></svg>
+      <svg *ngIf="showCommits" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 10h24v4h-24z"/></svg>
+    </div>
+  </div>
+</div>
